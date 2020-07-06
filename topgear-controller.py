@@ -8,6 +8,10 @@ HUB_ID = "90:84:2B:52:DA:8B"
 
 CR = '\x0D'
 
+#iface identifiers - check wich is your BLE adapter with "hciconfig -a"
+HID9 = 0      # /dev/hid0
+HID1 = 1      # /dev/hid1
+
 class MyDelegate(DefaultDelegate):
     def __init__(self):
         DefaultDelegate.__init__(self)
@@ -30,7 +34,7 @@ def send_command(hub, handle, command):
 
 
 # Initialisation  -------
-hub = Peripheral(HUB_ID)
+hub = Peripheral(HUB_ID, iface=HID0)
 hub.setDelegate( MyDelegate( ))
 hub_svcs = hub.getServices()    # without this cannot get ServiceByUUID to work ????
 hub_svcs = hub.getServiceByUUID( UUID(NORDIC_UART_SERVICE) )
