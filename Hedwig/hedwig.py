@@ -22,7 +22,7 @@ HOST = 'imap.gmail.com'
 USERNAME = '<gmailaccount>'
 PASSWORD = '<AppPassword>'
 CHECK_MAIL_TIME = 0.5                     # time between each mailbox check
-NOTICATION_TIME = 3.85                    # time for Owl to flap its wings
+NOTICATION_TIME = 4.2                    # time for Owl to flap its wings
 
 
 class MyDelegate(DefaultDelegate):
