@@ -21,3 +21,9 @@ are used another Pybricks class (easy to change on the micropython script).
 
 The python script assumes a Google Mail account is used but other IMAP services should work aswell. You need to edit the USERNAME and PASSWORD
 values and you should enable 2-key auth on the GMail account and then set an App Password.
+
+I'm using linux on my laptop and trying to make code that can also run on my MINDSTORMS EV3 brick (running ev3dev). So at the moment I am
+using ['bluepy'](https://github.com/IanHarvey/bluepy) python library. This only works on linux (also Raspberry Pi) but not on Windows and most probably
+not on Mac. You can try to port my code to a modern and more agnostic library like  ['bleak'](https://bleak.readthedocs.io/en/latest/).
+
+
