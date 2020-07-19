@@ -10,7 +10,7 @@ grohl666's video  ['Motorizing Hedwig in less than a minute. LEGO 75979 MOD'](ht
 The motor is controlled by a LEGO Powered Up City Hub running [Pybricks](https://pybricks.com) beta firmware.
 
 Two scripts are needed:
-- ['hedwig.py'](https://github.com/JorgePe/randomideas/blob/master/Hedwig/hedwig-pybricks.py) is a python script that runs on my laptop (Ubuntu Linux)
+- ['hedwig.py'](https://github.com/JorgePe/randomideas/blob/master/Hedwig/hedwig.py) is a python script that runs on my laptop (Ubuntu Linux)
 and controls the LEGO City Hub through the Nordic UART Service (NUS) implemented by the Pybricks firmware. The script checks a Google Mail mailbox for
 the arrival of a new e-mail and sends a command to the NUS to start motion and after a while another command to stop motion.
 - ['hedwig-pybricks.py'](https://github.com/JorgePe/randomideas/blob/master/Hedwig/hedwig-pybricks.py) is a micropython script that runs on the LEGO
