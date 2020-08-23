@@ -1,0 +1,32 @@
+from pybricks.pupdevices import  DCMotor
+from pybricks.hubs import CityHub
+from pybricks.parameters import Port
+from pybricks.tools import wait
+
+hub =  CityHub()
+mPlay =  DCMotor(Port.A)
+
+PlaySPEED = -100
+PlayTIME = 80   #ms
+
+ResetSPEED = 50
+ResetTIME = 850
+
+mPlay.dc(ResetSPEED)
+wait(ResetTIME)
+mPlay.stop()
+
+while True:
+    i = input("?")
+    if i == "p":
+        mPlay.dc(PlaySPEED)
+        wait(PlayTIME)
+        mPlay.stop()
+    elif i == 'r':
+        mPlay.dc(ResetSPEED)
+        wait(ResetTIME)
+        mPlay.stop()
+    elif i == 's':
+        mPlay.stop()
+    else:
+        print("!")
