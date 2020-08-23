@@ -11,7 +11,7 @@ from time import sleep
 
 HUB_ID = "90:84:2B:06:4B:53"  # My City Hub
 
-CHECK_MIDI_TIME = 0.1
+CHECK_MIDI_TIME = 0.001
 CHECK_MIDI_FILE = "checkmidi.txt"
 
 # NUS (Nordic UART Service) is used to communicate with the Hub when running Pybricks firmware
@@ -22,7 +22,7 @@ CR = '\x0D'                               # a Carriage Return should end each me
 
 # commands that Pybricks-side script should understand
 CMD_PLAY = 'p'                            # Play a key
-CMD_RST = 'r'                           # Reset keys
+CMD_RST = 'r'                             # Reset keys
 CMD_STOP = 's'                            # Stop
 
 class MyDelegate(DefaultDelegate):
