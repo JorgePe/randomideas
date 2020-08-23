@@ -10,15 +10,17 @@ firmware
 
 MINDSTORMS ipMIDI keyboard + Raspberry Pi softsynth + Grand Piano running Pybricks
 
-A script running in the RPi captures incoming MIDI notes and actuates the Grand Piano keys through the Nordic UART Service of the Pybricks firmware.
+A bash script 'midi-capture.sh' running in the RPi captures incoming MIDI notes (using ALSA 'aseqdump') and changes a status file "checkmidi.txt" everytime a 'Note ON' or 'Note OFF' passes though.
+
+Another (now python) script 'grandpiano.py' checks the status file and sends a 'p' to Nordic UART Service (NUS) running in the 'grandpiano.mpy' micropython
+script running on the Pybricks firmware on the Grand Piano' City Hub. This micropython script keep listening for the NUS and actuates the Grand Piano keys
+according to the commands receives ('p' for 'Play', 's' for 'Stop', 'r' for 'Reset' or 'Rewind').
+
+With proper timings the Grand Piano (in fact a pianola) follows the notes being played (it looks better for musics with few simultaneous notes) 
 
 
 ## LEGO Grand Piano Westworld Theme
 
 [![Youtube video](https://img.youtube.com/vi/bJun4xo4aLo/0.jpg)](https://www.youtube.com/watch?v=bJun4xo4aLo)
 
-The virtual piano (VMPK) and the Raspberry Py MIDI synth (yoshimi) are both receiving the same MIDI notes.
-
-At the RPi side, a script listens to MIDI and actuates the LEGO Grand Piano each time a "Note ON" arrives so the keyboard motion is
-somewhat synchronized with the music.
-
+This is a custom demonstration of the above scripts - using my laptop to play the 'Westworld' theme (or just any plain MIDI file) and sending the MIDI stream to the RPi ipMIDI synth (throug QmidiNet) and also to a virtual MIDI pinao (VMPK) so we can see the keys being played in real time.
