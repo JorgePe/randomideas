@@ -1,7 +1,8 @@
 # Crazy ideas with LEGO "Grand Piano" set
 
 My wife had great ideas for hacking her "Grand Piano" set. For the moment, I'm just testing concepts so will just put some samples of code here.
-Most will reuse ideas from my [LEGO ipMIDI instrument](https://github.com/JorgePe/multicastMIDI-EV3)
+Most will reuse ideas from my [LEGO ipMIDI instrument](https://github.com/JorgePe/multicastMIDI-EV3) after flashing the LEGO Powered Up hub with [Pybricks](https://pybricks.com/about/)
+firmware
 
 ## LEGO Grand Piano with a LEGO MIDI keyboard
 
