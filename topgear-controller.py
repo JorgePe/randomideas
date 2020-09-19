@@ -3,13 +3,13 @@
 from bluepy.btle import *
 from time import sleep
 
-#HUB_ID = "90:84:2B:4B:BF:59"
-HUB_ID = "90:84:2B:52:DA:8B"
+#HUB_OUI = "90:84:2B:4B:BF:59"
+HUB_OUI = "90:84:2B:52:DA:8B"
 
 CR = '\x0D'
 
 #iface identifiers - check wich is your BLE adapter with "hciconfig -a"
-HID9 = 0      # /dev/hid0
+HID0 = 0      # /dev/hid0
 HID1 = 1      # /dev/hid1
 
 class MyDelegate(DefaultDelegate):
@@ -34,7 +34,7 @@ def send_command(hub, handle, command):
 
 
 # Initialisation  -------
-hub = Peripheral(HUB_ID, iface=HID0)
+hub = Peripheral(HUB_OUI, iface=HID0)
 hub.setDelegate( MyDelegate( ))
 hub_svcs = hub.getServices()    # without this cannot get ServiceByUUID to work ????
 hub_svcs = hub.getServiceByUUID( UUID(NORDIC_UART_SERVICE) )
