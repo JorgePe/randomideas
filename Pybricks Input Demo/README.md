@@ -1,4 +1,4 @@
-Will explain here how to use "input()" on Pybricks micropython to send commands to a Powered Up hub.
+Will explain here how to use "getchar()" on Pybricks micropython to send commands to a Powered Up hub.
 
 The easiest way is using the I/O Window of the Pybricks IDE (Chrome-based) while running the micropython script since 
 the standard input (i.e. the keyboard) is already being redirected to the hub (through a BLE connection to the Nordic UART Service, managed by
