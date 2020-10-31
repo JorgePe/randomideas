@@ -1,0 +1,72 @@
+from pybricks.hubs import TechnicHub
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port, Stop
+from pybricks.tools import wait, StopWatch
+from pybricks.experimental import getchar
+
+hub = TechnicHub()
+
+mDrive = Motor(Port.D)
+mSteer = Motor(Port.B)
+mSteer.reset_angle()
+
+SPEED_DRIVE = 100
+TIME_DRIVE = 150
+STEP_STEER = 10
+SPEED_STEER = 720
+MAX_STEER = 70  # attention - program seems to crash if STEER angle too large (motor stalls)
+
+mSteer.run_target(SPEED_STEER,0, then=Stop.BRAKE)
+
+# some key codes
+SPACE = 32
+# keyboard arrow keys generate a sequence of 3 chars: ESC + '[' + A/B/C/D
+ESCAPE = 27
+OBRCKT  = 91  # opening square bracket '['
+CAP_A   = 65
+CAP_B   = 66
+CAP_C   = 67
+CAP_D   = 68
+
+LWR_A   = 97
+
+key_timer = StopWatch()
+
+c = None
+
+while True:
+    if key_timer.time() < TIME_DRIVE:
+        c = getchar()
+
+        if c == ESCAPE :
+            c = getchar()
+            if c == OBRCKT:
+                c = getchar()
+                if c == CAP_A:
+#                    print("UP")
+                    mDrive.dc(SPEED_DRIVE)
+                elif c == CAP_B:
+#                    print("DOWN")
+                    mDrive.dc(-SPEED_DRIVE)
+                elif c == CAP_C:
+#                    print("RIGHT")
+                    if mSteer.angle() < MAX_STEER:
+                        mSteer.run_angle(SPEED_STEER,STEP_STEER, then=Stop.BRAKE, wait=False)
+                elif c == CAP_D:
+#                    print("LEFT")
+                    if mSteer.angle() > -MAX_STEER:
+                        mSteer.run_angle(SPEED_STEER,-STEP_STEER, then=Stop.BRAKE, wait=False)
+        elif c == SPACE:
+#            print("SPACE")
+            mSteer.run_target(SPEED_STEER,0, then=Stop.BRAKE)
+
+    else:
+        mDrive.stop()  
+        mSteer.stop()
+        # empty buffer
+        while True:
+            c = getchar()
+            if c == None:
+                break
+        key_timer.reset()
+
