@@ -20,6 +20,10 @@ in some demos I will be using a basic "emulator" of the LEGO Top Gear Rally Car:
 
 it uses two XL motors instead of a L and a XL but the code works exactly the same way.
 
+A video showing the basic concept with just my laptop keyboard:
+
+[![Pybrick and getchar() - part 1](https://img.youtube.com/vi/yys5QrDj9A8/0.jpg)](https://www.youtube.com/watch?v=yys5QrDj9A8)
+
 A video showing a basic Makey Makey setup:
 
-[![Pybrick and Makey Makey](https://img.youtube.com/vi/njr63D6O7Ow/0.jpg)](https://www.youtube.com/watch?v=njr63D6O7Ow)
+[![Pybrick and getchar() - part 2](https://img.youtube.com/vi/njr63D6O7Ow/0.jpg)](https://www.youtube.com/watch?v=njr63D6O7Ow)
