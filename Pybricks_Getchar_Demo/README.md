@@ -1,4 +1,4 @@
-Will explain here how to use "getchar()" on Pybricks micropython to send commands to a Powered Up hub.
+# Will explain here how to use "getchar()" on Pybricks micropython to send commands to a Powered Up hub.
 
 The easiest way is using the I/O Window of the Pybricks IDE (Chrome-based) while running the micropython script since 
 the standard input (i.e. the keyboard) is already being redirected to the hub (through a BLE connection to the Nordic UART Service, managed by
@@ -20,14 +20,29 @@ in some demos I will be using a basic "emulator" of the LEGO Top Gear Rally Car:
 
 it uses two XL motors instead of a L and a XL but the code works exactly the same way.
 
-A video showing the basic concept with just my laptop keyboard and the emulator:
+# Some videos
+
+Part 1 - showing the basic concept with just my laptop keyboard and the emulator:
+
 
 [![Pybrick and getchar() - part 1](https://img.youtube.com/vi/yys5QrDj9A8/0.jpg)](https://www.youtube.com/watch?v=yys5QrDj9A8)
 
-A video showing the same thing now with the full Top Gear Rally Car model
+
+Part 2 - showing the same thing now with the full Top Gear Rally Car model
+
 
 [![Pybrick and getchar() - part 2](https://img.youtube.com/vi/sd1N2H8AURU/0.jpg)](https://www.youtube.com/watch?v=sd1N2H8AURU)
 
-A video showing a basic Makey Makey setup with the emulator:
+
+Part 3 - showing a basic Makey Makey setup with the emulator:
+
 
 [![Pybrick and getchar() - part 3](https://img.youtube.com/vi/njr63D6O7Ow/0.jpg)](https://www.youtube.com/watch?v=njr63D6O7Ow)
+
+
+# Roadmap
+
+- Xbox Adaptive Controller and some foot pedal and microswitches
+- Android Nordic Tollbox and the UART tool instead of the Chrome IDE
+- some python for direct accessing the Nordic UART Service instead of the Chrome IDE (linux, Raspberry Pi and MINDSTORMS EV3 clients)
+- probably a few more gadgets
