@@ -13,7 +13,7 @@ These explanations use the LEGO set [42109 App-Controlled Top Gear Rally Car](ht
 
 without modifications except for flashing the [Pybricks](https://pybricks.com/) firmware on the Technic Hub so I can use micropython instead of the LEGO App.
 
-The script used is always the same: [Top Gear script](https://github.com/JorgePe/randomideas/blob/master/Pybricks_Getchar_Demo/topgear_rally_car.mpy) but
+The script used is always the same: [Top Gear script](https://github.com/JorgePe/randomideas/blob/master/Pybricks_Getchar_Demo/TopGearRallyCar.mpy) but
 in some demos I will be using a basic "emulator" of the LEGO Top Gear Rally Car:
 
 <img alt="Top Gear Car Emulator" src="https://github.com/JorgePe/randomideas/blob/master/Pybricks_Getchar_Demo/TopGear-Emulator.jpg" width="480">
