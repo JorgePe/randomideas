@@ -12,9 +12,10 @@ without modifications except for the Pybricks firmware.
 The script is always the same: [Top Gear script](https://github.com/JorgePe/randomideas/blob/master/Pybricks%20Input%20Demo/topgear_rally_car.mpy) but
 in some demos I will be using a basic "emulator" of the LEGO Top Gear Rally Car:
 
-![Emulator](./TopGear-Emulator.jpg)
+![Emulator](./TopGear-Emulator.jpg|width=600)
 
 it uses two XL motors instead of a L and a XL but the code works exactly the same way.
 
 A video showing a basic Makey Makey setup:
+
 [![Pybrick and Makey Makey](https://img.youtube.com/vi/njr63D6O7Ow/0.jpg)](https://www.youtube.com/watch?v=njr63D6O7Ow)
