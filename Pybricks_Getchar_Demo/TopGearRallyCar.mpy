@@ -4,38 +4,44 @@ from pybricks.parameters import Port, Stop
 from pybricks.tools import wait, StopWatch
 from pybricks.experimental import getchar
 
-hub = TechnicHub()
+SPEED_DRIVE = 100  # power applied to driving motor (percentage)
+STEP_STEER  =  15  # steer direction (angle in degrees)
+SPEED_STEER = 720  # speed of steer direction changes (degrees per second)
+MAX_STEER   =  75  # max steer direction (angle in degrees)
+                   # motor stalls if too large and program crashes
 
-mDrive = Motor(Port.D)
-mSteer = Motor(Port.B)
-mSteer.reset_angle()
+TIME_KBD    = 200  # input buffer emptying period (ms) 
 
-SPEED_DRIVE = 100
-TIME_DRIVE = 150
-STEP_STEER = 10
-SPEED_STEER = 720
-MAX_STEER = 70  # attention - program seems to crash if STEER angle too large (motor stalls)
-
-mSteer.run_target(SPEED_STEER,0, then=Stop.BRAKE)
-
-# some key codes
-SPACE = 32
-# keyboard arrow keys generate a sequence of 3 chars: ESC + '[' + A/B/C/D
-ESCAPE = 27
-OBRCKT  = 91  # opening square bracket '['
-CAP_A   = 65
-CAP_B   = 66
-CAP_C   = 67
-CAP_D   = 68
-
+# some keyboard key codes
+SPACE   = 32
 LWR_A   = 97
 
+# keyboard arrow keys generate a sequence of 3 chars: ESC + '[' + A/B/C/D
+ESCAPE  = 27
+OBRCKT  = 91  # opening square bracket '['
+CAP_A   = 65  # Arrow UP
+CAP_B   = 66  # Arrow DOWN
+CAP_C   = 67  # Arrow LEFT
+CAP_D   = 68  # Arrow RIGHT
+
+# clear I/O windows
+for i in range(20):
+    print("")
+print("Running...")
+
+hub = TechnicHub()
+mDrive = Motor(Port.D)
+mSteer = Motor(Port.B)
 key_timer = StopWatch()
 
-c = None
+# start with steer direction pointing forward
+mSteer.reset_angle(0)
+angSteer = 0
+mSteer.run_target(SPEED_STEER, angSteer, then=Stop.BRAKE, wait=True)
 
+c = None
 while True:
-    if key_timer.time() < TIME_DRIVE:
+    if key_timer.time() < TIME_KBD:
         c = getchar()
 
         if c == ESCAPE :
@@ -43,30 +49,34 @@ while True:
             if c == OBRCKT:
                 c = getchar()
                 if c == CAP_A:
-#                    print("UP")
+                    print("Move forward")
                     mDrive.dc(SPEED_DRIVE)
+                    # keep moving until it's time to recycle the buffer
                 elif c == CAP_B:
-#                    print("DOWN")
+                    print("Move backward")
                     mDrive.dc(-SPEED_DRIVE)
+                    # keep moving until it's time to recycle the buffer
                 elif c == CAP_C:
-#                    print("RIGHT")
-                    if mSteer.angle() < MAX_STEER:
-                        mSteer.run_angle(SPEED_STEER,STEP_STEER, then=Stop.BRAKE, wait=False)
+                    print("Turn left")
+                    if angSteer< MAX_STEER:
+                        angSteer += STEP_STEER
+                        mSteer.run_target(SPEED_STEER, angSteer, then=Stop.HOLD, wait=True)
                 elif c == CAP_D:
-#                    print("LEFT")
-                    if mSteer.angle() > -MAX_STEER:
-                        mSteer.run_angle(SPEED_STEER,-STEP_STEER, then=Stop.BRAKE, wait=False)
+                    print("Turn right")
+                    if angSteer > -MAX_STEER:
+                        angSteer -= STEP_STEER
+                        mSteer.run_target(SPEED_STEER, angSteer, then=Stop.HOLD, wait=True)
         elif c == SPACE:
-#            print("SPACE")
-            mSteer.run_target(SPEED_STEER,0, then=Stop.BRAKE)
+            print("Reset steer")
+            angSteer = 0
+            mSteer.run_target(SPEED_STEER, angSteer, then=Stop.HOLD, wait=True)
 
     else:
+        # time to empty the input buffer
         mDrive.stop()  
-        mSteer.stop()
-        # empty buffer
+
         while True:
             c = getchar()
             if c == None:
                 break
         key_timer.reset()
-
