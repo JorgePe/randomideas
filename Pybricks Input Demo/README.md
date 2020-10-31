@@ -7,9 +7,13 @@ a Chrome extension)
 But the keyboard is not the only device that send events to the stdin - there are other devices, like the Makey Makey, that generate keyboard-like
 events. And there are programs that can be used to map the buttons of some HID devices (like gamepads or mouses) to keyboard events.
 
-The explanation uses the LEGO set [42109 App-Controlled Top Gear Rally Car](https://www.lego.com/en-pt/product/app-controlled-top-gear-rally-car-42109)
-without modifications except for the Pybricks firmware.
-The script is always the same: [Top Gear script](https://github.com/JorgePe/randomideas/blob/master/Pybricks%20Input%20Demo/topgear_rally_car.mpy) but
+These explanations use the LEGO set [42109 App-Controlled Top Gear Rally Car](https://www.lego.com/en-pt/product/app-controlled-top-gear-rally-car-42109)
+
+![Top Gear Rally Car](https://github.com/JorgePe/randomideas/blob/master/Pybricks%20Input%20Demo/TopGear.jpg)
+
+without modifications except for flashing the [Pybricks](https://pybricks.com/) firmware on the Technic Hub so I can use micropython instead of the LEGO App.
+
+The script used is always the same: [Top Gear script](https://github.com/JorgePe/randomideas/blob/master/Pybricks%20Input%20Demo/topgear_rally_car.mpy) but
 in some demos I will be using a basic "emulator" of the LEGO Top Gear Rally Car:
 
 <img alt="Top Gear Car Emulator" src="https://github.com/JorgePe/randomideas/blob/master/Pybricks%20Input%20Demo/TopGear-Emulator.jpg" width="480">
