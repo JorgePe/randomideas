@@ -5,7 +5,6 @@ from ev3dev2.button import Button
 from ev3dev2.sound import Sound
 from ev3dev2.led import Leds
 
-#from ev3dev2.led import Leds
 from time import sleep
 from datetime import datetime as dt
 import datetime
@@ -53,6 +52,7 @@ lightC.duty_cycle_sp=100
 lightD = DcMotor(OUTPUT_D)
 lightD.duty_cycle_sp=100
 
+# cycle all candles
 
 lightA.run_direct()
 sleep(2)
@@ -67,10 +67,14 @@ lightD.run_direct()
 sleep(2)
 lightD.stop()    
 
+# check current date
+
 today = dt.today()
 print('Today is:', today)
 speech = today.strftime("%A") + ' ' + today.strftime("%-d") + ' ' + today.strftime("%B")
 sound.speak('Todays is ' + speech)
+
+# light up candles
 
 if today >= sunday4:
     print("4")
@@ -100,6 +104,8 @@ elif today >= sunday1:
     lightA.run_direct()
     sound.speak("It is the fisrt week of the Advent", espeak_opts=ESPEAK)
 
+# play a xmas music
+# .wav file needs to be PCM mono 22050 Hz
 sleep(2)
 sound.play_file('./We_Wish_You_A_Merry_Christmas_pcm_mono.wav')
 sleep(2)
