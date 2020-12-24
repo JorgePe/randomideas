@@ -2,6 +2,8 @@
 
 ### Based on LEGO set 40426 "Christmas Wreath 2-in-1"
 
+[![Demo video](https://img.youtube.com/vi/rRrZO37u74Q/0.jpg)](https://www.youtube.com/watch?v=rRrZO37u74Q)
+
 A MINDSTORMS EV3 lights up each of the 4 Advent Candles according to current date.
 Each candle is connected through a LEGO fiber optic element to a Power Function light, controlled by
 the EV3 (an adapter cable is used).
