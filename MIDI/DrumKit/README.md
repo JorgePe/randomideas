@@ -2,7 +2,7 @@
 
 ## A MIDI Drum Kit made with LEGO MINDSTORMS EV3
 
-https://youtu.be/dTuFZ_FHsHQ
+[![DrumKit v0.5](https://img.youtube.com/vi/dTuFZ_FHsHQ/0.jpg)](https://www.youtube.com/watch?v=dTuFZ_FHsHQ)
 
 ### Introduction
 
