@@ -1,0 +1,3 @@
+LEGO MIDI Drum Kit
+
+Made with LEGO MINDSTORMS EV3 
