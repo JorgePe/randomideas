@@ -42,15 +42,16 @@ This gives our MINDSTORMS EV3 a MIDI Out port in the form of a DIN5 cable that c
 like a synthesizer to generate audible sound from the MIDI music messages we sent him.
 
 This works quite well and has very little overhead - playing a MIDI file with 'amidi' uses 5% or less of the EV3 CPU and
-depending on your synth quality audio can sound quite good.
+depending on your synth quality audio can sound quite good (I also found out that the USB adapter also plays a role here
+- playing complexe MIDI songs on the same synth sounds **quite** different depending on the USB MIDI adapter used) 
 
-But if you don't have a USB MIDI adapter or you don't want to deal with a mess of cables and gadgets attached to your MINDSTORMS
-there is a wireless option: ipMIDI. Instead of sending MIDI messages to a physical MIDI port we send the very same messages to
-a virtual MIDI port that multicasts those messages through WiFi. ipMIDI is not officially MIDI so there aren't commercial devices
-that can use it but it is wide used with computers and smart devices like phones or tablets (TouchDAW, for instance, can run on
-a smarphone and send and receive ipMIDI messages).
+But if you don't have a USB MIDI adapter or you don't want to deal with a mess of cables and gadgets directly attached to your
+MINDSTORMS there is a wireless option: ipMIDI. Instead of sending MIDI messages to a physical MIDI port we send the very same
+messages to a virtual MIDI port that multicasts those messages through WiFi. ipMIDI is not officially MIDI so there aren't commercial 
+devices that can use it but it is wide used with computers and smart devices like phones or tablets (TouchDAW, for instance, can run 
+on my smartphone and send and receive ipMIDI messages).
 
-So I present two versions of my script:
+So I prepared two versions of my script:
 
 - 'mididrum.py' assumes the EV3 is connected to other MIDI devices through a USB MIDI adapter
 - 'ipmididrum.py' sends MIDI messages through Wi-Fi using the ipMIDI protocol
