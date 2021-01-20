@@ -2,6 +2,8 @@
 
 ## A MIDI Drum Kit made with LEGO MINDSTORMS EV3
 
+https://youtu.be/dTuFZ_FHsHQ
+
 ### Introduction
 
 This allows using a single LEGO MINDSTORMS EV3 with 4 color sensors as a MIDI instrument.
@@ -54,7 +56,6 @@ So I present two versions of my script:
 - 'ipmididrum.py' sends MIDI messages through Wi-Fi using the ipMIDI protocol
 
 [to be done]
-
-explain how to use
-explain how to change configuration
-give real world examples of both scenarios
+- explain how to use
+- explain how to change configuration
+- give real world examples of both scenarios
