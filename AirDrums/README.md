@@ -18,4 +18,14 @@ And finally you will need to install 3 linux programs:
 - VMPK
 - Hydrogen
 
-Yes, linux. Yes, geeky. But you want your LEGO to do nice things like playing virtual MIDI Air Drums right? So you need to embrace The Force. 
+Yes, linux. Yes, geeky. But you want your LEGO to do nice things like playing virtual MIDI Air Drums right? So you need to embrace The Force.
+
+## Notes
+
+Turnsout Hydrogen /the drum engine) accepts keyboard input so VMPK is not needed. Will soon add a version of 'airdrum-demo.py' and 'airdrum.py'
+that forwards directly to Hydrogen without using VMPK as a MIDI gateway. This is simpler and faster but VMPK still has the advantage of MIDI
+(so instead of Hydrogen pretty much anything can be used as long as it has a MIDI input).
+
+Also been trying using the IMU sensor to read which side is facing up when "hitting" the drum. This allows more instruments to be played (a
+request from one of my kids). With a little training from the musician each Air Drum can play two different instruments (pointing UP or
+pointing DOWN when "hitting") at the cost of a few beats per minute. Will also add these versions soon.
