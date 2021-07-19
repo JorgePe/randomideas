@@ -22,7 +22,7 @@ Yes, linux. Yes, geeky. But you want your LEGO to do nice things like playing vi
 
 ## Notes
 
-Turnsout Hydrogen /the drum engine) accepts keyboard input so VMPK is not needed. Will soon add a version of 'airdrum-demo.py' and 'airdrum.py'
+Turnsout Hydrogen (the drum engine) accepts keyboard input so VMPK is not needed. Will soon add a version of 'airdrum-demo.py' and 'airdrum.py'
 that forwards directly to Hydrogen without using VMPK as a MIDI gateway. This is simpler and faster but VMPK still has the advantage of MIDI
 (so instead of Hydrogen pretty much anything can be used as long as it has a MIDI input).
 
