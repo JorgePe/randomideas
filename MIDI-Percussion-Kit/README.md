@@ -76,7 +76,7 @@ FILE
 This is a bash script that uses an ALSA utility ('aseqdump') to listen to live MIDI events and reacts to the intended
 ones (like 'Note ON' for the Bass Drum) sending a single char to the python script above.
 
-It is based on a nice script I found:
+It is based on a nice script I found [here](https://superuser.com/questions/1170136/translating-midi-input-into-computer-keystrokes-on-linux)
 
 It uses a FIFO file to pass data to the python script. I use this trick a lot with my MIDI LEGO instruments, isn't pretty
 but it works.
