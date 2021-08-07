@@ -62,14 +62,14 @@ The script waits for a single character ('A', 'B', 'C', 'D') and performs a basi
 according to it. When this script runs through the Crome-based Pybricks IDE one can use the keyboard to manually
 control the Percussion Tool Kit and forget all the python/bash/ALSA/linux/MIDI voodoo.
 
-FILE
+['main-hub.py'](https://github.com/JorgePe/randomideas/blob/master/MIDI-Percussion-Kit/main-hub.py)
 
 ### Pybricksdev
 
 This is a python script that sends the Pybricks script to the Hub, starts it and then sends a single char ('A', B', 'C', 'D')
 through Bluetooth BLE to the LEGO Hub whenever it receives another single char from a help bash script.
 
-FILE
+['percussionkit.py'](https://github.com/JorgePe/randomideas/blob/master/MIDI-Percussion-Kit/percussionkit.py)
 
 ### bash
 
@@ -81,7 +81,7 @@ It is based on a nice script I found [here](https://superuser.com/questions/1170
 It uses a FIFO file to pass data to the python script. I use this trick a lot with my MIDI LEGO instruments, isn't pretty
 but it works.
 
-FILE
+['midi-to-fifo.sh'](https://github.com/JorgePe/randomideas/blob/master/MIDI-Percussion-Kit/midi-to-fifo.sh)
 
 ## Joining everything
 
